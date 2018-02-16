@@ -59,4 +59,12 @@ describe('Hero Tests', function() {
     assert.deepStrictEqual(hero.heroTasks, [task3, task1, task2])
   });
 
+  it('should be able to sort tasks by difficulty', function(){
+    hero.addTask(task1);
+    hero.addTask(task2);
+    hero.addTask(task3);
+    hero.sortTasksByDifficulty();
+    assert.deepStrictEqual(hero.heroTasks, [task2, task1, task3])
+  });
+
 });
