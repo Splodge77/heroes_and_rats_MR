@@ -7,6 +7,7 @@ const Hero = function (name, favoriteFood) {
   };
   this.heroTasks = [];
   this.completedTasks = [];
+  this.incompleteTasks = [];
 }
 
 Hero.prototype.eat = function(food){
@@ -49,10 +50,10 @@ Hero.prototype.viewCompletedTasks = function () {
 Hero.prototype.viewIncompleteTasks = function () {
   this.heroTasks.forEach(function(task){
     if(task.completed === false){
-      this.ompletedTasks.push(task);
+      this.incompleteTasks.push(task);
     };
   }.bind(this));
-  return this.completedTasks;
+  return this.incompleteTasks;
 };
 
 module.exports = Hero;

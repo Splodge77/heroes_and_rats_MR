@@ -73,6 +73,13 @@ describe('Hero Tests', function() {
     assert.deepStrictEqual(task1.completed, true)
   });
 
+  it('should not affect origional heroTasks array by completing a task', function(){
+    hero.addTask(task1);
+    hero.heroCompleteTask(task1);
+    hero.viewCompletedTasks();
+    assert.deepStrictEqual(hero.heroTasks, [task1])
+  });
+
   it('should be able to view completed tasks', function(){
     hero.addTask(task1);
     hero.addTask(task2);
@@ -80,6 +87,15 @@ describe('Hero Tests', function() {
     hero.heroCompleteTask(task1);
     hero.viewCompletedTasks();
     assert.deepStrictEqual(hero.completedTasks, [task1])
+  });
+
+  it('should be able to view incomplete tasks', function(){
+    hero.addTask(task1);
+    hero.addTask(task2);
+    hero.addTask(task3);
+    hero.heroCompleteTask(task1);
+    hero.viewIncompleteTasks();
+    assert.deepStrictEqual(hero.incompleteTasks, [task2, task3])
   });
 
 });
