@@ -7,3 +7,5 @@ const Hero = function (name, favoriteFood) {
   };
   this.heroTasks = [];
 }
+
+module.exports = Hero;
