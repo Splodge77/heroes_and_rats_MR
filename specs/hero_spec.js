@@ -1,27 +1,33 @@
 const assert = require ('assert')
 const Hero = require ('../hero.js')
 
-describe('Hero', function() {
+describe('Hero Tests', function() {
 
   let hero;
 
-  beforeEach(function(){
+  beforeEach("Setup", function(){
     hero = new Hero("Sir. Lengthy Pork-sword", "Sausge");
   });
 
   it('should have a name', function(){
-    assert.strictEqual(hero.name, "Sir. Lengthy Pork-sword")
+    assert.deepStrictEqual(hero.name, "Sir. Lengthy Pork-sword")
   });
 
   it('should have a favoriteFood', function(){
-    assert.strictEqual(hero.favoriteFood, "Sausge")
+    assert.deepStrictEqual(hero.favoriteFood, "Sausge")
   });
 
   it('should have base health of 100', function(){
-    assert.strictEqual(hero.health, 100)
+    assert.deepStrictEqual(hero.health, 100)
   });
 
   it('should talk saying their name', function(){
-    assert.strictEqual(hero.talk(), "Good day, i am Sir. Lengthy Pork-sword")
+    assert.deepStrictEqual(hero.talk(), "Good day, i am Sir. Lengthy Pork-sword")
   });
+
+  it('should start with an empty array of tasks', function(){
+    assert.deepStrictEqual(hero.heroTasks, [])
+  });
+
+
 });
