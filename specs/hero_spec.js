@@ -7,8 +7,9 @@ describe('Hero Tests', function() {
   let hero;
 
   beforeEach("Setup", function(){
-    hero = new Hero("Sir. Lengthy Pork-sword", "Sausge");
-    food1 = new Food("Sausage", 20)
+    hero = new Hero("Sir. Lengthy Pork-sword", "Sausage");
+    food1 = new Food("Sausage", 20);
+    food2 = new Food("Turkey", 50);
   });
 
   it('should have a name', function(){
@@ -16,7 +17,7 @@ describe('Hero Tests', function() {
   });
 
   it('should have a favoriteFood', function(){
-    assert.deepStrictEqual(hero.favoriteFood, "Sausge")
+    assert.deepStrictEqual(hero.favoriteFood, "Sausage")
   });
 
   it('should have base health of 100', function(){
@@ -32,8 +33,15 @@ describe('Hero Tests', function() {
   });
 
   it('should accumulate health when eating', function(){
-    hero.eat(food1);
-    assert.deepStrictEqual(hero.health, 120);
+    hero.eat(food2);
+    assert.deepStrictEqual(hero.health, 150);
   });
+
+  it('should accumulate 50% more health if food is favorite', function(){
+    hero.eat(food1);
+    assert.deepStrictEqual(hero.health, 130);
+  });
+
+  it('should sort tasks by difficulty', )
 
 });

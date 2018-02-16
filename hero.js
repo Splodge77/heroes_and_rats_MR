@@ -9,6 +9,10 @@ const Hero = function (name, favoriteFood) {
 }
 
 Hero.prototype.eat = function(food){
+  if(food.name === this.favoriteFood){
+    const newValue = food.replenishment *= 1.5;
+    return this.health += newValue;
+  };
   return this.health += food.replenishment;
 };
 
