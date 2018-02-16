@@ -15,5 +15,13 @@ describe('Hero', function() {
 
   it('should have a favoriteFood', function(){
     assert.strictEqual(hero.favoriteFood, "Sausge")
-  })
+  });
+
+  it('should have base health of 100', function(){
+    assert.strictEqual(hero.health, 100)
+  });
+
+  it('should talk saying their name', function(){
+    assert.strictEqual(hero.talk(), "Good day, i am Sir. Lengthy Pork-sword")
+  });
 });
