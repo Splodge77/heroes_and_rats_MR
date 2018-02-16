@@ -13,4 +13,9 @@ describe("Rat Test", function(){
   it('should have a name', function(){
     assert.deepStrictEqual(rat1.name, "Scabbers")
   });
+
+  it('should be able to poison food', function(){
+    rat.touch(food1);
+    assert.deepStrictEqual(food1.poisoned, true)
+  });
 });

@@ -20,4 +20,9 @@ describe("Food Test",function(){
   it('should start as not poisoned', function(){
     assert.deepStrictEqual(food1.poisoned, false)
   });
+
+  it('should become poisoned', function(){
+    food1.poison();
+    assert.deepStrictEqual(food1.poisoned, true)
+  });
 });
