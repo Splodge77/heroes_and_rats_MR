@@ -6,6 +6,7 @@ const Hero = function (name, favoriteFood) {
     return `Good day, i am ${this.name}`
   };
   this.heroTasks = [];
+  this.completedTasks = [];
 }
 
 Hero.prototype.eat = function(food){
@@ -31,5 +32,9 @@ Hero.prototype.sortTasksByDifficulty = function(){
     return taskb.difficulty - taska.difficulty;
   });
 };
+
+Hero.prototype.completeTask = function(task){
+  task.completed === true;
+}
 
 module.exports = Hero;

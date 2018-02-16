@@ -30,4 +30,9 @@ describe('Task Test', function(){
     assert.deepStrictEqual(task1.completed, false)
   });
 
+  it('should be able to complete a task', function(){
+    task1.completeTask();
+    assert.deepStrictEqual(task1.completed, true)
+  });
+
 });

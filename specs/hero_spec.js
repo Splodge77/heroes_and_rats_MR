@@ -67,4 +67,13 @@ describe('Hero Tests', function() {
     assert.deepStrictEqual(hero.heroTasks, [task2, task1, task3])
   });
 
+  xit('should be able to view completed tasks', function(){
+    hero.addTask(task1);
+    hero.addTask(task2);
+    hero.addTask(task3);
+    hero.completeTask(task1);
+    hero.viewCompletedTasks();
+    assert.deepStrictEqual(hero.completedTasks, [task1])
+  });
+
 });
