@@ -8,5 +8,8 @@ const Hero = function (name, favoriteFood) {
   this.heroTasks = [];
 }
 
+Hero.prototype.eat = function(food){
+  return this.health += food.replenishment;
+};
 
 module.exports = Hero;

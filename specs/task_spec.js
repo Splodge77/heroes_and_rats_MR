@@ -29,5 +29,5 @@ describe('Task Test', function(){
   it('should start as incomplete (false)', function(){
     assert.deepStrictEqual(task1.completed, false)
   });
-  
+
 });

@@ -1,5 +1,6 @@
 const assert = require ('assert')
 const Hero = require ('../hero.js')
+const Food = require ('../food.js')
 
 describe('Hero Tests', function() {
 
@@ -7,6 +8,7 @@ describe('Hero Tests', function() {
 
   beforeEach("Setup", function(){
     hero = new Hero("Sir. Lengthy Pork-sword", "Sausge");
+    food1 = new Food("Sausage", 20)
   });
 
   it('should have a name', function(){
@@ -29,5 +31,9 @@ describe('Hero Tests', function() {
     assert.deepStrictEqual(hero.heroTasks, [])
   });
 
+  it('should accumulate health when eating', function(){
+    hero.eat(food1);
+    assert.deepStrictEqual(hero.health, 120);
+  });
 
 });
