@@ -16,4 +16,8 @@ describe("Food Test",function(){
   it('should have a replenishment value', function(){
     assert.deepStrictEqual(food1.replenishment, 20)
   });
+
+  it('should start as not poisoned', function(){
+    assert.deepStrictEqual(food1.poisoned, false)
+  });
 });
