@@ -25,4 +25,9 @@ describe('Task Test', function(){
   it('should have a reward', function(){
     assert.deepStrictEqual(task1.reward, 'Lady Loosetoungue')
   });
+
+  it('should start as incomplete (false)', function(){
+    assert.deepStrictEqual(task1.completed, false)
+  });
+  
 });
