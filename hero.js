@@ -16,4 +16,14 @@ Hero.prototype.eat = function(food){
   return this.health += food.replenishment;
 };
 
+Hero.prototype.addTask = function (task) {
+    this.heroTasks.push(task);
+};
+
+Hero.prototype.sortTasksByUrgency = function(){
+  return this.heroTasks.sort(function(taska,taskb){
+    return taskb.urgency - taska.urgency;
+  });
+};
+
 module.exports = Hero;
