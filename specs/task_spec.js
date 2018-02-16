@@ -16,5 +16,13 @@ describe('Task Test', function(){
 
   it('should have a difficulty level', function(){
     assert.deepStrictEqual(task1.difficulty, 70);
-  })
+  });
+
+  it('should have an urgency level', function(){
+    assert.deepStrictEqual(task1.urgency, 6)
+  });
+
+  it('should have a reward', function(){
+    assert.deepStrictEqual(task1.reward, 'Lady Loosetoungue')
+  });
 });
