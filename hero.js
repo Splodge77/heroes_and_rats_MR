@@ -33,8 +33,10 @@ Hero.prototype.sortTasksByDifficulty = function(){
   });
 };
 
-Hero.prototype.completeTask = function(task){
-  task.completed === true;
-}
+
+
+Hero.prototype.heroCompleteTask = function (task) {
+  task.completeTask();
+};
 
 module.exports = Hero;
