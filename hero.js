@@ -33,10 +33,26 @@ Hero.prototype.sortTasksByDifficulty = function(){
   });
 };
 
-
-
 Hero.prototype.heroCompleteTask = function (task) {
   task.completeTask();
+};
+
+Hero.prototype.viewCompletedTasks = function () {
+  this.heroTasks.forEach(function(task){
+    if(task.completed === true){
+      this.completedTasks.push(task);
+    };
+  }.bind(this));
+  return this.completedTasks;
+};
+
+Hero.prototype.viewIncompleteTasks = function () {
+  this.heroTasks.forEach(function(task){
+    if(task.completed === false){
+      this.ompletedTasks.push(task);
+    };
+  }.bind(this));
+  return this.completedTasks;
 };
 
 module.exports = Hero;
