@@ -4,6 +4,7 @@ const Food = require ('../food.js')
 const Task = require ('../task.js')
 const Rat = require ('../rat.js')
 const Weapon = require('../weapon.js')
+const Orc = require('../orc.js')
 
 describe('Hero Tests', function() {
 
@@ -12,6 +13,7 @@ describe('Hero Tests', function() {
   let task;
   let rat;
   let weapon;
+  let orc;
 
   beforeEach("Setup", function(){
     food1 = new Food("Sausage", 20);
@@ -22,7 +24,9 @@ describe('Hero Tests', function() {
     rat = new Rat("Scabbers");
     weapon1 = new Weapon("Sword", 40, 2)
     weapon2 = new Weapon("Crossbow", 15, 10)
+    weapon3 = new Weapon("Axe", 20, 2)
     hero = new Hero("Sir. Lengthy Pork-sword", food1, weapon1);
+    orc = new Orc("Slimewurst", weapon3);
   });
 
   it('should have a name', function(){
@@ -121,5 +125,10 @@ describe('Hero Tests', function() {
     hero.chooseWeapon(weapon2);
     assert.deepStrictEqual(hero.weapon, weapon2)
   });
+
+  xit("can disarm an orc", function(){
+    hero.disarmOrc(orc)
+    assert.deepStrictEqual(orc.damage, 0)
+  })
 
 });

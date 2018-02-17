@@ -64,4 +64,8 @@ Hero.prototype.chooseWeapon = function (weapon) {
   this.weapon = chosenWeapon;
 };
 
+Hero.prototype.disarmOrc = function (orc) {
+  return orc.disarm();
+};
+
 module.exports = Hero;

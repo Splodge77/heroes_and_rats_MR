@@ -32,4 +32,9 @@ describe("Orc Test", function(){
     orc1.damageMultiplier(weapon1);
     assert.deepStrictEqual(orc1.damage, 50)
   });
+
+  it('should be able to be disarmed', function(){
+    orc1.isDisarmed();
+    assert.deepStrictEqual(orc1.damage, 0)
+  });
 });
