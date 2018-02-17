@@ -12,7 +12,7 @@ const Hero = function (name, favoriteFood, weapon) {
 }
 
 Hero.prototype.eat = function(food){
-  if(food.name === this.favoriteFood && food.poisoned === false){
+  if(food === this.favoriteFood && food.poisoned === false){
     const newValue = food.replenishment *= 1.5;
     return this.health += newValue;
   } else if (food.poisoned === true){
@@ -57,6 +57,11 @@ Hero.prototype.viewIncompleteTasks = function () {
     };
   }.bind(this));
   return this.incompleteTasks;
+};
+
+Hero.prototype.chooseWeapon = function (weapon) {
+  const chosenWeapon = weapon;
+  this.weapon = chosenWeapon;
 };
 
 module.exports = Hero;

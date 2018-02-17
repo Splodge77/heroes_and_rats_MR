@@ -14,7 +14,6 @@ describe('Hero Tests', function() {
   let weapon;
 
   beforeEach("Setup", function(){
-    hero = new Hero("Sir. Lengthy Pork-sword", "Sausage", "Sword");
     food1 = new Food("Sausage", 20);
     food2 = new Food("Turkey", 50);
     task1 = new Task("Bring protection to the grand ball.", 50, 7, "Don't get crabs!");
@@ -23,6 +22,7 @@ describe('Hero Tests', function() {
     rat = new Rat("Scabbers");
     weapon1 = new Weapon("Sword", 40, 2)
     weapon2 = new Weapon("Crossbow", 15, 10)
+    hero = new Hero("Sir. Lengthy Pork-sword", food1, weapon1);
   });
 
   it('should have a name', function(){
@@ -30,7 +30,7 @@ describe('Hero Tests', function() {
   });
 
   it('should have a favoriteFood', function(){
-    assert.deepStrictEqual(hero.favoriteFood, "Sausage")
+    assert.deepStrictEqual(hero.favoriteFood, food1)
   });
 
   it('should have base health of 100', function(){
@@ -114,7 +114,12 @@ describe('Hero Tests', function() {
   });
 
   it("should have a weapon", function(){
-    assert.deepStrictEqual(hero.weapon, "Sword")
-  })
+    assert.deepStrictEqual(hero.weapon, weapon1)
+  });
+
+  it("should be able to choose a weapon", function(){
+    hero.chooseWeapon(weapon2);
+    assert.deepStrictEqual(hero.weapon, weapon2)
+  });
 
 });
