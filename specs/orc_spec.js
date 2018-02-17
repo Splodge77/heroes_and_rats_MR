@@ -18,10 +18,14 @@ describe("Orc Test", function(){
   });
 
   it('should have a base damage', function(){
-    assert.deepStrictEqual(orc1.damage, 30)
+    assert.deepStrictEqual(orc1.baseDamage, 30)
   });
 
   it('should start with a weapon', function(){
     assert.deepStrictEqual(orc1.weapon, "Axe")
   });
+
+  it('should have more base damage, depending on the weapon', function(){
+    assert.deepStrictEqual()
+  })
 });
