@@ -3,7 +3,7 @@ const Rat = function(name){
 }
 
 Rat.prototype.touch = function (food) {
-  food.poisoned = true;
+  return food.poison();
 };
 
 module.exports = Rat;

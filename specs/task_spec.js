@@ -34,5 +34,4 @@ describe('Task Test', function(){
     task1.completeTask();
     assert.deepStrictEqual(task1.completed, true)
   });
-
 });

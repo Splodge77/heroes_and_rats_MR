@@ -8,6 +8,7 @@ describe("Rat Test", function(){
 
   beforeEach(function(){
     rat1 = new Rat ("Scabbers");
+    food1 = new Food ("Sausage", 20)
   });
 
   it('should have a name', function(){
@@ -15,7 +16,8 @@ describe("Rat Test", function(){
   });
 
   it('should be able to poison food', function(){
-    rat.touch(food1);
+    assert.deepStrictEqual(food1.poisoned, false)
+    rat1.touch(food1);
     assert.deepStrictEqual(food1.poisoned, true)
   });
 });

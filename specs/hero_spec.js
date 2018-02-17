@@ -2,6 +2,7 @@ const assert = require ('assert')
 const Hero = require ('../hero.js')
 const Food = require ('../food.js')
 const Task = require ('../task.js')
+const Rat = require ('../rat.js')
 
 describe('Hero Tests', function() {
 
@@ -11,9 +12,10 @@ describe('Hero Tests', function() {
     hero = new Hero("Sir. Lengthy Pork-sword", "Sausage");
     food1 = new Food("Sausage", 20);
     food2 = new Food("Turkey", 50);
-    task1 = new Task("Bring protection to the grand ball.", 50, 7, "Don't get crabs!")
-    task2 = new Task("Find the princess.", 75, 5, "The princess is in another castle!")
-    task3 = new Task("Kill boars.... lots of boars", 30, 9, "Continue grinding")
+    task1 = new Task("Bring protection to the grand ball.", 50, 7, "Don't get crabs!");
+    task2 = new Task("Find the princess.", 75, 5, "The princess is in another castle!");
+    task3 = new Task("Kill boars.... lots of boars", 30, 9, "Continue grinding");
+    rat = new Rat("Scabbers");
   });
 
   it('should have a name', function(){
@@ -96,6 +98,12 @@ describe('Hero Tests', function() {
     hero.heroCompleteTask(task1);
     hero.viewIncompleteTasks();
     assert.deepStrictEqual(hero.incompleteTasks, [task2, task3])
+  });
+
+  it('should take damage if poisoned food is eaten', function(){
+    rat.touch(food1);
+    hero.eat(food1);
+    assert.deepStrictEqual(hero.health, 70)
   });
 
 });
