@@ -1,4 +1,5 @@
-const Weapon = function (damage, range){
+const Weapon = function (name, damage, range){
+  this.name = name;
   this.damage = damage;
   this.range = range;
 }

@@ -6,16 +6,20 @@ describe("Weapon Test", function(){
   let weapon;
 
   beforeEach(function(){
-    axe = new Weapon(20, 2);
-    crossbow = new Weapon(15, 10);
-    sword = new Weapon(30, 2);
+    weapon1 = new Weapon("Axe", 20, 2);
+    weapon2 = new Weapon("Crossbow", 15, 10);
+    weapon3 = new Weapon("sword", 40, 2);
+  });
+
+  it('should have a name', function(){
+    assert.deepStrictEqual(weapon1.name, "Axe")
   });
 
   it('should have a damage value', function(){
-    assert.deepStrictEqual(axe.damage, 20)
+    assert.deepStrictEqual(weapon1.damage, 20)
   });
 
   it('should have a range', function(){
-    assert.deepStrictEqual(crossbow.range, 10)
+    assert.deepStrictEqual(weapon2.range, 10)
   });
 });
