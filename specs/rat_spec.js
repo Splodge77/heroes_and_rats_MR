@@ -5,6 +5,7 @@ const Food = require('../food.js');
 describe("Rat Test", function(){
 
   let rat;
+  let food;
 
   beforeEach(function(){
     rat1 = new Rat ("Scabbers");
