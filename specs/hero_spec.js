@@ -126,7 +126,7 @@ describe('Hero Tests', function() {
     assert.deepStrictEqual(hero.weapon, weapon2)
   });
 
-  xit("can disarm an orc", function(){
+  it("can disarm an orc", function(){
     hero.disarmOrc(orc);
     assert.deepStrictEqual(orc.weapon.damage, 0);
   });
