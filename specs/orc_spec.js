@@ -12,4 +12,8 @@ describe("Orc Test", function(){
   it('should have a name', function(){
     assert.deepStrictEqual(orc1.name, "Lok-tar")
   });
+
+  it('should have a base health', function(){
+    assert.deepStrictEqual(orc1.health, 150)
+  });
 });
