@@ -10,7 +10,7 @@ Orc.prototype.damageMultiplier = function (weapon) {
 };
 
 Orc.prototype.isDisarmed = function () {
-  this.damage = 0;
+  this.weapon.damage = 0;
 };
 
 module.exports = Orc;

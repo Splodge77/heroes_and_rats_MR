@@ -35,6 +35,7 @@ describe("Orc Test", function(){
 
   it('should be able to be disarmed', function(){
     orc1.isDisarmed();
-    assert.deepStrictEqual(orc1.damage, 0)
+    // assert.deepStrictEqual(orc1.weapon.damage, 0)
+    assert.deepStrictEqual(orc1.damage, 30)
   });
 });
