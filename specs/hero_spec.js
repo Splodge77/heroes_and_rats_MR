@@ -131,4 +131,15 @@ describe('Hero Tests', function() {
     assert.deepStrictEqual(orc.weapon.damage, 0);
   });
 
+  it("can attack an orc", function(){
+    hero.chooseWeapon(weapon1);
+    hero.attack(orc);
+    assert.deepStrictEqual(orc.health, 110)
+  });
+
+  it("can attack a rat", function(){
+    hero.attack(rat);
+    assert.deepStrictEqual(rat.health, 10)
+  });
+
 });

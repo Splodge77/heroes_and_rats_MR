@@ -68,4 +68,8 @@ Hero.prototype.disarmOrc = function (orc) {
   return orc.isDisarmed();
 };
 
+Hero.prototype.attack = function (target) {
+  return target.health -= this.weapon.damage;
+};
+
 module.exports = Hero;
