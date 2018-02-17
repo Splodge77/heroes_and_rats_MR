@@ -21,4 +21,17 @@ describe("Rat Test", function(){
     rat1.touch(food1);
     assert.deepStrictEqual(food1.poisoned, true)
   });
+
+  it('should die', function(){
+    rat1.health = 0
+    rat1.checkIfDead();
+    assert.deepStrictEqual(rat1.dead, true)
+  });
+
+  it('should not poison food if dead', function(){
+    rat1.health = 0
+    rat1.checkIfDead();
+    rat1.touch(food1);
+    assert.deepStrictEqual(food1.poisoned, false)
+  })
 });
