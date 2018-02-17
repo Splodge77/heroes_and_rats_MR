@@ -3,19 +3,26 @@ const Hero = require ('../hero.js')
 const Food = require ('../food.js')
 const Task = require ('../task.js')
 const Rat = require ('../rat.js')
+const Weapon = require('../weapon.js')
 
 describe('Hero Tests', function() {
 
   let hero;
+  let food;
+  let task;
+  let rat;
+  let weapon;
 
   beforeEach("Setup", function(){
-    hero = new Hero("Sir. Lengthy Pork-sword", "Sausage");
+    hero = new Hero("Sir. Lengthy Pork-sword", "Sausage", "Sword");
     food1 = new Food("Sausage", 20);
     food2 = new Food("Turkey", 50);
     task1 = new Task("Bring protection to the grand ball.", 50, 7, "Don't get crabs!");
     task2 = new Task("Find the princess.", 75, 5, "The princess is in another castle!");
     task3 = new Task("Kill boars.... lots of boars", 30, 9, "Continue grinding");
     rat = new Rat("Scabbers");
+    weapon1 = new Weapon("Sword", 40, 2)
+    weapon2 = new Weapon("Crossbow", 15, 10)
   });
 
   it('should have a name', function(){
@@ -105,5 +112,9 @@ describe('Hero Tests', function() {
     hero.eat(food1);
     assert.deepStrictEqual(hero.health, 70)
   });
+
+  it("should have a weapon", function(){
+    assert.deepStrictEqual(hero.weapon, "Sword")
+  })
 
 });

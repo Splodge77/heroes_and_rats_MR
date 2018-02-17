@@ -1,4 +1,4 @@
-const Hero = function (name, favoriteFood) {
+const Hero = function (name, favoriteFood, weapon) {
   this.name = name;
   this.health = 100;
   this.favoriteFood = favoriteFood;
@@ -8,6 +8,7 @@ const Hero = function (name, favoriteFood) {
   this.heroTasks = [];
   this.completedTasks = [];
   this.incompleteTasks = [];
+  this.weapon = weapon;
 }
 
 Hero.prototype.eat = function(food){

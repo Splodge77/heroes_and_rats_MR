@@ -5,6 +5,7 @@ const Weapon = require('../weapon.js')
 describe("Orc Test", function(){
 
   let orc;
+  let weapon;
 
   beforeEach(function(){
     orc1 = new Orc("Lok-tar", "Axe")
@@ -23,7 +24,7 @@ describe("Orc Test", function(){
     assert.deepStrictEqual(orc1.baseDamage, 30)
   });
 
-  xit('should start with a weapon', function(){
+  it('should start with a weapon', function(){
     assert.deepStrictEqual(orc1.weapon, "Axe")
   });
 
