@@ -127,8 +127,9 @@ describe('Hero Tests', function() {
   });
 
   it("can disarm an orc", function(){
+    orc.isArmed();
     hero.disarmOrc(orc);
-    assert.deepStrictEqual(orc.weapon.damage, 0);
+    assert.deepStrictEqual(orc.damage, 20);
   });
 
   it("can attack an orc", function(){

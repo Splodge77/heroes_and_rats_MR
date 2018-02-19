@@ -1,6 +1,7 @@
 const assert = require('assert');
 const Orc = require('../orc.js');
 const Weapon = require('../weapon.js')
+const Hero = require('../hero.js')
 
 describe("Orc Test", function(){
 
@@ -8,8 +9,9 @@ describe("Orc Test", function(){
   let weapon;
 
   beforeEach(function(){
-    orc1 = new Orc("Lok-tar", "Axe")
+    orc1 = new Orc("Lok-tar", weapon1)
     weapon1 = new Weapon("Axe", 20, 2)
+    hero1 = new Hero("Sir.JsWat", "Bacon", weapon1)
   });
 
   it('should have a name', function(){
@@ -25,17 +27,18 @@ describe("Orc Test", function(){
   });
 
   it('should start with a weapon', function(){
-    assert.deepStrictEqual(orc1.weapon, "Axe")
+    assert.deepStrictEqual(orc1.weapon, weapon1)
   });
 
-  it('should have weapon damage multiplier', function(){
-    orc1.damageMultiplier(weapon1);
+  it('should be armed', function(){
+    orc1.isArmed();
     assert.deepStrictEqual(orc1.damage, 50)
   });
 
-  it('should be able to be disarmed', function(){
+  it("should be disarmed", function(){
+    orc1.isArmed();
     orc1.isDisarmed();
-    // assert.deepStrictEqual(orc1.weapon.damage, 0)
-    assert.deepStrictEqual(orc1.damage, 30)
+    assert.deepStrictEqual(orc1.damage, 20)
   });
+
 });

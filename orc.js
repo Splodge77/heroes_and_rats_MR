@@ -5,12 +5,12 @@ const Orc = function(name, weapon){
   this.weapon = weapon;
 }
 
-Orc.prototype.damageMultiplier = function (weapon) {
-  return this.damage += weapon.damage;
+Orc.prototype.isArmed = function () {
+  this.damage += this.weapon.damage;
 };
 
 Orc.prototype.isDisarmed = function () {
-  this.weapon.damage = 0;
+  this.damage = 20;
 };
 
 module.exports = Orc;

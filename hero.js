@@ -4,7 +4,7 @@ const Hero = function (name, favoriteFood, weapon) {
   this.favoriteFood = favoriteFood;
   this.talk = function (){
     return `Good day, i am ${this.name}`
-  };
+  }; // shouldnt be inside the constructor becaues if someone else wants to log this info out the message will print
   this.heroTasks = [];
   this.completedTasks = [];
   this.incompleteTasks = [];
@@ -65,11 +65,11 @@ Hero.prototype.chooseWeapon = function (weapon) {
 };
 
 Hero.prototype.disarmOrc = function (orc) {
-  return orc.isDisarmed();
+  orc.isDisarmed();
 };
 
 Hero.prototype.attack = function (target) {
-  return target.health -= this.weapon.damage;
+  target.health -= this.weapon.damage;
 };
 
 module.exports = Hero;
