@@ -46,6 +46,19 @@ describe("Orc Test", function(){
     orc1.isArmed();
     orc1.attack(hero1);
     assert.deepStrictEqual(hero1.health, 50)
-  })
+  });
+
+  it("should be dead", function(){
+    orc1.health = 0;
+    orc1.checkIfDead();
+    assert.deepStrictEqual(orc1.dead, true)
+  });
+
+  it("should not attack if dead", function(){
+    orc1.dead = true;
+    orc1.checkIfDead();
+    orc1.attack(hero1);
+    assert.deepStrictEqual(hero1.health, 100)
+  });
 
 });

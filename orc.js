@@ -3,7 +3,7 @@ const Orc = function(name, weapon){
   this.health = 150;
   this.damage = 30;
   this.weapon = weapon;
-  // this.dead = false;
+  this.dead = false;
 }
 
 Orc.prototype.isArmed = function () {
@@ -14,8 +14,16 @@ Orc.prototype.isDisarmed = function () {
   this.damage = 20;
 };
 
+Orc.prototype.checkIfDead = function(){
+  if(this.health <= 0){
+    this.dead = true;
+  };
+};
+
 Orc.prototype.attack = function (target) {
-  target.health -= this.damage;
+  if(this.dead === false){
+    target.health -= this.damage;
+  };
 };
 
 module.exports = Orc;
