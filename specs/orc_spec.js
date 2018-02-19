@@ -7,6 +7,7 @@ describe("Orc Test", function(){
 
   let orc;
   let weapon;
+  let hero;
 
   beforeEach(function(){
     orc1 = new Orc("Lok-tar", weapon1)
@@ -40,5 +41,11 @@ describe("Orc Test", function(){
     orc1.isDisarmed();
     assert.deepStrictEqual(orc1.damage, 20)
   });
+
+  it("can attack a hero", function(){
+    orc1.isArmed();
+    orc1.attack(hero1);
+    assert.deepStrictEqual(hero1.health, 50)
+  })
 
 });

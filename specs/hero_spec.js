@@ -148,4 +148,11 @@ describe('Hero Tests', function() {
     assert.deepStrictEqual(rat.health, 10)
   });
 
+  it("can kill a rat", function(){
+    hero.attack(rat);
+    hero.attack(rat);
+    rat.checkIfDead();
+    assert.deepStrictEqual(rat.dead, true)
+  });
+
 });
