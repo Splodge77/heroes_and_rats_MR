@@ -1,7 +1,7 @@
 const assert = require('assert');
-const Orc = require('../orc.js');
-const Weapon = require('../weapon.js')
-const Hero = require('../hero.js')
+const Orc = require('../models/npcs/orc.js');
+const Weapon = require('../models/environment/weapon.js')
+const Hero = require('../models/characters/hero.js')
 
 describe("Orc Test", function(){
 

@@ -1,10 +1,10 @@
 const assert = require ('assert')
-const Hero = require ('../hero.js')
-const Food = require ('../food.js')
-const Task = require ('../task.js')
-const Rat = require ('../rat.js')
-const Weapon = require('../weapon.js')
-const Orc = require('../orc.js')
+const Hero = require ('../models/characters/hero.js')
+const Food = require ('../models/environment/food.js')
+const Task = require ('../models/environment/task.js')
+const Rat = require ('../models/npcs/rat.js')
+const Weapon = require('../models/environment/weapon.js')
+const Orc = require('../models/npcs/orc.js')
 
 describe('Hero Tests', function() {
 

@@ -1,5 +1,5 @@
 const assert = require('assert')
-const Food = require('./models/environment/food.js')
+const Food = require('../models/environment/food.js')
 
 describe("Food Test",function(){
 

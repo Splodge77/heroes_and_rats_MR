@@ -1,5 +1,5 @@
 const assert = require('assert')
-const Weapon = require('../weapon.js')
+const Weapon = require('../models/environment/weapon.js')
 
 describe("Weapon Test", function(){
 
